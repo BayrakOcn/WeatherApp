@@ -32,8 +32,8 @@ def get_weather():
     address, lat_long = selected_location.split(" (")
     latitude, longitude = map(float, lat_long[:-1].split(", "))
 
-    # openweather 5 Day / 3 Hour Forecast service
-    api_key = "bc880fa8b02061feba391b34cefd8d16"  # Your API
+    # openweather "5 Day / 3 Hour Forecast" API
+    api_key = "bc880fa8b02061feba391b34cefd8d16"  # API, you can use this one also can take your own, it's free.
     base_url = f"http://api.openweathermap.org/data/2.5/weather?lat={latitude}&lon={longitude}&appid={api_key}&units=metric"
     response = requests.get(base_url)
     data = response.json()
